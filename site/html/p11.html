@@ -3,22 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=1280">
-  <title>P11 · 实时链路的联调范围</title>
+  <title>P11 · 实时计算：开发阶段的基础验证</title>
   <link rel="stylesheet" href="../assets/interview-v2.css?v=slate-20261116-2">
   <link rel="stylesheet" href="../assets/project-one.css?v=slate-20261116-2">
+  <style>
+    .sql-scope{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:25px}
+    .sql-scope section{min-height:98px;padding:13px 17px;background:#edf1f8;border-top:3px solid var(--teal)}
+    .sql-scope h2{font-size:22px;font-weight:500;line-height:1.45}
+    .sql-scope p{font-size:16px;color:var(--muted);line-height:1.5;margin-top:5px}
+    .test-status{display:grid;grid-template-columns:170px 1fr;gap:16px;align-items:center;margin-top:13px;padding-top:12px;border-top:1px solid var(--line);font-size:17px;line-height:1.5;color:var(--body)}
+    .test-status strong{font-weight:500;color:var(--ink)}
+  </style>
 </head>
 <body>
-  <main class="slide project-slide" aria-label="实时链路的联调范围">
-    <p class="eyebrow">项目一 / 实时链路</p>
-    <h1 class="slide-title">实时链路的联调范围</h1>
-    <p class="subheading">主链路已联调，整条实时计算链路未上线</p>
-    <div class="realtime-flow">
-      <div class="diagram-node"><h3>三端 SDK</h3><p>Android / iOS / H5</p></div><span class="diagram-arrow" aria-hidden="true">→</span><div class="diagram-node"><h3>采集服务</h3><p>event-sdk</p></div><span class="diagram-arrow" aria-hidden="true">→</span><div class="diagram-node"><h3>Kafka</h3><p>消息缓冲</p></div><span class="diagram-arrow" aria-hidden="true">→</span><div class="diagram-node"><h3>Flink</h3><p>基础统计</p></div><span class="diagram-arrow" aria-hidden="true">→</span><div class="diagram-node"><h3>Hologres</h3><p>分析存储</p></div><span class="diagram-arrow" aria-hidden="true">→</span><div class="diagram-node"><h3>report</h3><p>分析后台</p></div>
+  <main class="slide project-slide" aria-label="实时计算：开发阶段的基础验证">
+    <p class="eyebrow">项目一 / 实时计算</p>
+    <h1 class="slide-title">实时计算：开发阶段的基础验证</h1>
+    <p class="subheading">在测试数据上写过几条基础 Flink SQL；实时计算链路没有上线</p>
+    <div class="sql-scope" aria-label="测试阶段验证的基础统计">
+      <section><h2>在线人数</h2><p>基础实时统计</p></section>
+      <section><h2>等级分布</h2><p>按玩家等级聚合</p></section>
+      <section><h2>装备分布</h2><p>按装备等级聚合</p></section>
     </div>
-    <div class="realtime-branch"><span class="mysql-branch">MySQL · 核对数据</span><p class="realtime-facts">已验证：在线人数、等级和装备分布等基础统计</p></div>
-    <div class="event-stream-label"><h2>事件流联调界面</h2><p>请求时间、客户端时间与事件明细</p></div>
+    <div class="event-stream-label" style="margin-top:25px"><h2>测试阶段的事件流记录</h2><p>可核对上报事件、请求时间与客户端时间</p></div>
     <figure class="screenshot-crop" style="width:1120px;height:176.10px"><img src="../assets/img/project-one/report-event-stream.png" alt="事件流原图局部：上报事件、时间、应用和客户端信息" style="width:1289.06px;left:-169.06px;top:-243.02px"></figure>
-    <p class="event-stream-caption">采集服务另行写入 MySQL；重试补偿、双写一致性和生产监控仍需完善</p>
+    <div class="test-status"><strong>实际范围</strong><span>测试阶段的基础 SQL 验证；复杂实时场景、链路可靠性和生产运行能力未验证。</span></div>
     <footer class="footer"><span>施辞 · 大数据开发工程师</span><span class="footer-page">P11</span></footer>
   </main>
 </body>
