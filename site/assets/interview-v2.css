@@ -1,0 +1,53 @@
+/* 1280 × 720 固定画布；新版开场与项目一共用的基础样式。 */
+:root {
+  --ink: #262f3f;
+  --body: #445164;
+  --muted: #657181;
+  --teal: #365ebd;
+  --line: #dce1eb;
+  --paper: #f7f9fc;
+  --font: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 1280px; height: 720px; overflow: hidden; }
+body { font-family: var(--font); color: var(--ink); background: var(--paper); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, p { margin: 0; }
+.slide { position: relative; width: 1280px; height: 720px; padding: 62px 80px 58px; background: var(--paper); overflow: hidden; }
+.eyebrow { color: var(--teal); font-size: 15px; line-height: 1.5; letter-spacing: .12em; font-weight: 400; }
+.slide-title { margin-top: 15px; font-size: 42px; line-height: 1.3; letter-spacing: .015em; font-weight: 600; }
+.footer { position: absolute; left: 80px; right: 80px; bottom: 30px; display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-size: 13px; line-height: 20px; }
+.footer-page { font-variant-numeric: tabular-nums; letter-spacing: .04em; }
+.cover { background: var(--paper); color: var(--ink); }
+.cover .eyebrow { color: var(--teal); }
+.cover-title { position: absolute; left: 80px; top: 230px; font-weight: 600; font-size: 64px; line-height: 1.35; letter-spacing: .015em; }
+.cover-person { position: absolute; left: 83px; top: 340px; color: var(--ink); font-size: 32px; font-weight: 500; letter-spacing: .08em; }
+.cover-topic { color: var(--muted); font-size: 21px; letter-spacing: .045em; }
+.cover-byline { position: absolute; left: 80px; right: 80px; top: 543px; border-top: 3px solid var(--teal); padding-top: 27px; display: flex; align-items: baseline; justify-content: space-between; }
+.cover-name { font-size: 32px; font-weight: 500; letter-spacing: .08em; }
+.cover-date { font-size: 17px; color: var(--muted); }
+.cover .footer { color: var(--muted); }
+.agenda { margin-top: 38px; }
+.agenda-row { display: grid; grid-template-columns: 60px 180px 1fr; border-top: 1px solid var(--line); align-items: start; padding-top: 22px; }
+.chapter-number { font-size: 17px; color: var(--teal); line-height: 32px; font-variant-numeric: tabular-nums; }
+.chapter-title { font-size: 24px; line-height: 32px; font-weight: 500; }
+.agenda-intro { padding-bottom: 23px; }
+.chapter-detail { font-size: 19px; color: var(--muted); line-height: 32px; }
+.agenda-projects { padding-bottom: 13px; }
+.project-list { margin: 0; padding: 0; list-style: none; }
+.project-item { position: relative; padding: 0 100px 19px 0; }
+.project-name { font-size: 23px; line-height: 32px; font-weight: 500; }
+.project-desc { font-size: 17px; line-height: 26px; color: var(--muted); margin-top: 3px; }
+.project-time { position: absolute; top: 4px; right: 0; color: var(--muted); font-size: 16px; line-height: 24px; white-space: nowrap; }
+.profile { display: grid; grid-template-columns: 400px 1fr; column-gap: 65px; margin-top: 42px; }
+.profile-name { font-size: 60px; font-weight: 500; letter-spacing: .08em; line-height: 1.15; }
+.profile-role { margin-top: 15px; font-size: 21px; color: var(--muted); }
+.profile-summary { margin-top: 27px; font-size: 24px; font-weight: 400; line-height: 1.7; color: var(--body); }
+.tools { border-top: 1px solid var(--line); margin-top: 31px; padding-top: 15px; }
+.tool-line { display: grid; grid-template-columns: 56px 1fr; gap: 12px; font-size: 16px; line-height: 30px; color: var(--muted); }
+.tool-line dt, .tool-line dd { margin: 0; }
+.tool-line dt { color: var(--body); }
+.experience { margin-top: 3px; }
+.experience-row { border-top: 3px solid var(--teal); padding: 20px 0 24px; }
+.experience-row h2 { font-size: 25px; line-height: 34px; font-weight: 500; }
+.experience-row p { font-size: 18px; line-height: 30px; color: var(--muted); margin-top: 10px; }
+@media print { @page { size: 1280px 720px; margin: 0; } body { print-color-adjust: exact; -webkit-print-color-adjust: exact; } }

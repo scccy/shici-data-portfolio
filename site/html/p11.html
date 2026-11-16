@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1280">
+  <title>P11 · 实时链路的联调范围</title>
+  <link rel="stylesheet" href="../assets/interview-v2.css?v=slate-20261116-2">
+  <link rel="stylesheet" href="../assets/project-one.css?v=slate-20261116-2">
+</head>
+<body>
+  <main class="slide project-slide" aria-label="实时链路的联调范围">
+    <p class="eyebrow">项目一 / 实时链路</p>
+    <h1 class="slide-title">实时链路的联调范围</h1>
+    <p class="subheading">主链路已联调，整条实时计算链路未上线</p>
+    <div class="realtime-flow">
+      <div class="diagram-node"><h3>三端 SDK</h3><p>Android / iOS / H5</p></div><span class="diagram-arrow" aria-hidden="true">→</span><div class="diagram-node"><h3>采集服务</h3><p>event-sdk</p></div><span class="diagram-arrow" aria-hidden="true">→</span><div class="diagram-node"><h3>Kafka</h3><p>消息缓冲</p></div><span class="diagram-arrow" aria-hidden="true">→</span><div class="diagram-node"><h3>Flink</h3><p>基础统计</p></div><span class="diagram-arrow" aria-hidden="true">→</span><div class="diagram-node"><h3>Hologres</h3><p>分析存储</p></div><span class="diagram-arrow" aria-hidden="true">→</span><div class="diagram-node"><h3>report</h3><p>分析后台</p></div>
+    </div>
+    <div class="realtime-branch"><span class="mysql-branch">MySQL · 核对数据</span><p class="realtime-facts">已验证：在线人数、等级和装备分布等基础统计</p></div>
+    <div class="event-stream-label"><h2>事件流联调界面</h2><p>请求时间、客户端时间与事件明细</p></div>
+    <figure class="screenshot-crop" style="width:1120px;height:176.10px"><img src="../assets/img/project-one/report-event-stream.png" alt="事件流原图局部：上报事件、时间、应用和客户端信息" style="width:1289.06px;left:-169.06px;top:-243.02px"></figure>
+    <p class="event-stream-caption">采集服务另行写入 MySQL；重试补偿、双写一致性和生产监控仍需完善</p>
+    <footer class="footer"><span>施辞 · 大数据开发工程师</span><span class="footer-page">P11</span></footer>
+  </main>
+</body>
+</html>
+

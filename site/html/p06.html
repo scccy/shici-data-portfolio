@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1280">
+  <title>P06 · 离线数据加工与补数</title>
+  <link rel="stylesheet" href="../assets/interview-v2.css?v=slate-20261116-2">
+  <link rel="stylesheet" href="../assets/project-one.css?v=slate-20261116-2">
+</head>
+<body>
+  <main class="slide project-slide" aria-label="离线数据加工与补数">
+    <p class="eyebrow">项目一 / 离线加工</p>
+    <h1 class="slide-title">离线数据加工与补数</h1>
+    <p class="subheading">先保留原始批次，入仓时按业务主键取最新</p>
+    <div class="offline-flow">
+      <div class="diagram-node"><h3>数据入口</h3><p>API / RPA<br>Excel / 临时调整</p></div><span class="diagram-arrow" aria-hidden="true">→</span>
+      <div class="diagram-node"><h3>STG</h3><p>MySQL 落地<br>保留原始批次</p></div><span class="diagram-arrow" aria-hidden="true">→</span>
+      <div class="diagram-node"><h3>ODS</h3><p>按业务主键<br>取最新记录</p></div><span class="diagram-arrow" aria-hidden="true">→</span>
+      <div class="diagram-node"><h3>DWD / DWS</h3><p>明细与汇总<br>ADS 应用加工</p></div><span class="diagram-arrow" aria-hidden="true">→</span>
+      <div class="diagram-node"><h3>数据输出</h3><p>BI 报表 / API<br>飞书日报</p></div>
+    </div>
+    <div class="offline-detail">
+      <section><h2>去重放在入仓环节</h2><p>STG 允许重复批次<br>下游模型使用去重结果</p></section>
+      <section><h2>同步侧失败处理</h2><p>失败请求进入 RabbitMQ 补偿队列<br>其他同步请求继续执行</p></section>
+      <section><h2>定时调度与区间补数</h2><p>DataWorks 定时跑 T+1<br>按区间补数并复核下游</p></section>
+    </div>
+    <footer class="footer"><span>施辞 · 大数据开发工程师</span><span class="footer-page">P06</span></footer>
+  </main>
+</body>
+</html>
+

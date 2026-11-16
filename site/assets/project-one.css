@@ -1,0 +1,81 @@
+/* 项目一 P04–P09；沿用 interview-v2.css 的字体、页眉和安全边距。 */
+.project-content { margin-top: 34px; }
+.section-title { font-size: 24px; font-weight: 500; line-height: 1.4; }
+.section-note { color: var(--muted); font-size: 17px; line-height: 1.6; }
+.subheading { margin-top: 12px; font-size: 20px; color: var(--muted); line-height: 1.5; }
+.diagram-node { border: 1px solid var(--line); background: #edf1f8; padding: 17px 10px; text-align: center; }
+.diagram-node h3 { font-size: 20px; line-height: 1.5; font-weight: 500; }
+.diagram-node p { font-size: 15px; line-height: 1.6; color: var(--muted); margin-top: 5px; }
+.diagram-arrow { color: var(--teal); font-size: 24px; text-align: center; align-self: center; }
+.two-lines { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+.business-line { border-top: 3px solid var(--teal); padding-top: 20px; }
+.line-heading { display: flex; align-items: baseline; justify-content: space-between; }
+.line-state { font-size: 15px; line-height: 1.5; color: var(--teal); }
+.line-state.pending { color: var(--muted); }
+.business-flow { display: grid; grid-template-columns: 1fr 28px 1.5fr 28px 1fr; align-items: stretch; margin-top: 26px; min-height: 120px; }
+.business-flow.report-flow { grid-template-columns: 1.3fr 28px 1fr 28px 1fr; }
+.business-footer { margin-top: 24px; color: var(--muted); font-size: 17px; line-height: 1.7; }
+.shared-services { margin-top: 32px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; gap: 48px; align-items: center; padding: 23px 0; }
+.shared-services h2 { font-size: 20px; font-weight: 500; }
+.shared-services p { font-size: 18px; color: var(--muted); }
+.responsibility { margin-top: 23px; font-size: 18px; color: var(--body); }
+.bi-layout { display: grid; grid-template-columns: 390px 390px 260px; column-gap: 40px; margin-top: 28px; }
+.bi-figure { margin: 0; }
+.bi-frame { height: 283px; margin-top: 16px; display: flex; justify-content: center; align-items: flex-start; overflow: hidden; background: #fff; border: 1px solid var(--line); }
+.bi-frame img { width: 100%; height: auto; display: block; }
+.bi-caption { font-size: 16px; line-height: 1.7; color: var(--muted); margin-top: 15px; }
+.bi-dashboard { display: grid; grid-template-columns: 112px 1fr; gap: 18px; margin-top: 16px; }
+.bi-dashboard img { display: block; width: 112px; height: 288px; }
+.dashboard-description { font-size: 17px; line-height: 1.8; color: var(--muted); padding-top: 14px; }
+.bi-bottom { border-top: 1px solid var(--line); padding-top: 15px; margin-top: 23px; font-size: 18px; line-height: 1.5; }
+.workflow-layout { display: grid; grid-template-columns: 728px 332px; gap: 60px; margin-top: 29px; }
+.workflow-steps { list-style: none; margin: 0; padding: 0; }
+.workflow-step { display: grid; grid-template-columns: 42px 202px 1fr; align-items: center; gap: 16px; border-top: 1px solid var(--line); padding: 21px 0; min-height: 89px; }
+.step-number { color: var(--teal); font-size: 17px; }
+.workflow-step h2 { font-weight: 500; font-size: 22px; line-height: 1.5; }
+.workflow-step p { font-size: 17px; color: var(--muted); line-height: 1.65; }
+.workflow-support { border-top: 1px solid var(--line); padding-top: 20px; }
+.support-section + .support-section { margin-top: 25px; border-top: 1px solid var(--line); padding-top: 20px; }
+.support-section h2 { font-size: 20px; font-weight: 500; line-height: 1.5; }
+.support-section p { font-size: 17px; color: var(--muted); line-height: 1.8; margin-top: 10px; }
+.worktree-pair { display: flex; gap: 12px; margin-top: 14px; }
+.worktree-pair span { flex: 1; border: 1px solid var(--line); padding: 12px 4px; text-align: center; font-size: 15px; color: var(--body); }
+.workflow-note { margin-top: 18px; font-size: 17px; color: var(--muted); }
+.offline-flow { display: grid; grid-template-columns: 185px 26px 190px 26px 205px 26px 220px 26px 210px; margin-top: 54px; }
+.offline-flow .diagram-node { padding: 25px 8px; min-height: 145px; }
+.offline-flow .diagram-node h3 { font-size: 23px; }
+.offline-flow .diagram-node p { font-size: 17px; }
+.offline-detail { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-top: 40px; }
+.offline-detail section { border-top: 3px solid var(--teal); padding-top: 18px; }
+.offline-detail h2 { font-size: 22px; font-weight: 500; }
+.offline-detail p { margin-top: 12px; font-size: 18px; color: var(--muted); line-height: 1.75; }
+.evidence-list { display: flex; flex-direction: column; gap: 19px; margin-top: 31px; }
+.evidence-row { display: grid; grid-template-columns: 180px 908px; column-gap: 32px; align-items: start; }
+.evidence-label h2 { font-size: 23px; font-weight: 500; line-height: 1.5; }
+.evidence-label p { font-size: 17px; color: var(--muted); line-height: 1.7; margin-top: 9px; }
+.screenshot-crop { position: relative; overflow: hidden; margin: 0; background: #fff; border: 1px solid var(--line); }
+.screenshot-crop img { position: absolute; display: block; max-width: none; height: auto; }
+.realtime-flow { display: grid; grid-template-columns: repeat(5, 1fr 24px) 1fr; margin-top: 27px; }
+.realtime-flow .diagram-node { padding: 11px 4px; }
+.realtime-flow .diagram-node h3 { font-size: 19px; }
+.realtime-flow .diagram-node p { font-size: 14px; }
+.realtime-branch { display: flex; position: relative; align-items: center; margin: 12px 0 23px; padding-left: 190px; gap: 60px; height: 43px; }
+.realtime-branch::before { content: ""; position: absolute; left: 272px; top: -13px; height: 16px; border-left: 1px solid #a5b2c9; }
+.mysql-branch { border-bottom: 1px solid #a5b2c9; padding: 4px 12px 6px; font-size: 17px; color: var(--body); }
+.realtime-facts { font-size: 17px; line-height: 1.6; color: var(--muted); }
+.event-stream-label { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+.event-stream-label h2 { font-size: 21px; font-weight: 500; }
+.event-stream-label p { font-size: 16px; color: var(--muted); }
+.event-stream-caption { font-size: 16px; color: var(--muted); margin-top: 12px; line-height: 1.5; }
+.definitions { margin-top: 35px; gap: 30px; }
+.definitions-note { border-top: 1px solid var(--line); margin-top: 27px; padding-top: 20px; color: var(--body); font-size: 19px; line-height: 1.6; }
+.permission-chain { display: flex; align-items: center; gap: 25px; margin-top: 27px; padding: 14px 0 17px; border-bottom: 1px solid var(--line); }
+.permission-chain > span:not(.diagram-arrow) { font-size: 22px; }
+.permission-chain p { margin-left: auto; color: var(--muted); font-size: 18px; }
+.permission-evidence { margin-top: 22px; gap: 24px; }
+.delivery-table { width: 100%; border-collapse: collapse; margin-top: 33px; text-align: left; }
+.delivery-table th, .delivery-table td { border-top: 1px solid var(--line); padding: 22px 0; font-weight: 400; }
+.delivery-table thead th { color: var(--muted); font-size: 17px; padding-top: 13px; padding-bottom: 17px; }
+.delivery-table tbody th { width: 265px; font-size: 22px; color: var(--ink); }
+.delivery-table tbody td { font-size: 20px; color: var(--muted); line-height: 1.5; }
+.delivery-owner { margin-top: 22px; font-size: 18px; line-height: 1.5; color: var(--body); }
