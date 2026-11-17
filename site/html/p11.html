@@ -1,35 +1,4 @@
 <!doctype html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=1280">
-  <title>P11 · 实时计算：开发阶段的基础验证</title>
-  <link rel="stylesheet" href="../assets/interview-v2.css?v=slate-20261116-2">
-  <link rel="stylesheet" href="../assets/project-one.css?v=slate-20261116-2">
-  <style>
-    .sql-scope{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:25px}
-    .sql-scope section{min-height:98px;padding:13px 17px;background:#edf1f8;border-top:3px solid var(--teal)}
-    .sql-scope h2{font-size:22px;font-weight:500;line-height:1.45}
-    .sql-scope p{font-size:16px;color:var(--muted);line-height:1.5;margin-top:5px}
-    .test-status{display:grid;grid-template-columns:170px 1fr;gap:16px;align-items:center;margin-top:13px;padding-top:12px;border-top:1px solid var(--line);font-size:17px;line-height:1.5;color:var(--body)}
-    .test-status strong{font-weight:500;color:var(--ink)}
-  </style>
-</head>
-<body>
-  <main class="slide project-slide" aria-label="实时计算：开发阶段的基础验证">
-    <p class="eyebrow">项目一 / 实时计算</p>
-    <h1 class="slide-title">实时计算：开发阶段的基础验证</h1>
-    <p class="subheading">在测试数据上写过几条基础 Flink SQL；实时计算链路没有上线</p>
-    <div class="sql-scope" aria-label="测试阶段验证的基础统计">
-      <section><h2>在线人数</h2><p>基础实时统计</p></section>
-      <section><h2>等级分布</h2><p>按玩家等级聚合</p></section>
-      <section><h2>装备分布</h2><p>按装备等级聚合</p></section>
-    </div>
-    <div class="event-stream-label" style="margin-top:25px"><h2>测试阶段的事件流记录</h2><p>可核对上报事件、请求时间与客户端时间</p></div>
-    <figure class="screenshot-crop" style="width:1120px;height:176.10px"><img src="../assets/img/project-one/report-event-stream.png" alt="事件流原图局部：上报事件、时间、应用和客户端信息" style="width:1289.06px;left:-169.06px;top:-243.02px"></figure>
-    <div class="test-status"><strong>实际范围</strong><span>测试阶段的基础 SQL 验证；复杂实时场景、链路可靠性和生产运行能力未验证。</span></div>
-    <footer class="footer"><span>施辞 · 大数据开发工程师</span><span class="footer-page">P11</span></footer>
-  </main>
-</body>
-</html>
-
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=1280"><title>P11 · 事件配置与 SDK 上报</title>
+<style>*{box-sizing:border-box}html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#f7f9fc}img{display:block;width:1280px;height:720px;object-fit:contain}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style></head>
+<body><main aria-label="事件配置与 SDK 上报"><img src="../assets/slides/p11.png" alt="事件配置与 SDK 上报，施辞个人项目介绍第 11 页"><h1 class="sr-only">事件配置与 SDK 上报</h1></main></body></html>

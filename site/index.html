@@ -1,64 +1,15 @@
 <!doctype html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>施辞 · 大数据开发作品集</title>
-  <style>
-    *{box-sizing:border-box}body{margin:0;background:#e4e8f0;color:#262f3f;font-family:"PingFang SC","Microsoft YaHei",sans-serif;overflow:hidden}
-    .toolbar{height:64px;padding:0 28px;display:flex;align-items:center;gap:10px;background:#fff;border-bottom:1px solid #dce1eb}
-    .title{font-size:16px;font-weight:500}.hint{color:#657181;font-size:13px;margin-left:12px}.spacer{flex:1}
-    button{font:inherit;font-size:14px;background:#fff;color:#262f3f;border:1px solid #dce1eb;border-radius:5px;padding:7px 13px;cursor:pointer}
-    button:hover{background:#eef2f9}button:disabled{opacity:.4;cursor:default}.counter{min-width:100px;text-align:center;font-size:14px}
-    .viewport{position:absolute;top:64px;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;padding:24px}
-    .frame-wrap{position:relative;background:#fff;box-shadow:0 12px 44px #262f3f25}
-    iframe{position:absolute;top:0;left:0;width:1280px;height:720px;border:0;transform-origin:top left;pointer-events:none}
-    :fullscreen .toolbar{display:none}:fullscreen .viewport{top:0;background:#262f3f;padding:0}
-    @media(max-width:720px){.hint{display:none}.toolbar{padding:0 12px;gap:6px}.title{font-size:13px}.counter{min-width:65px}}
-  .material-link{font-size:13px;color:#262f3f;text-decoration:none;margin-right:12px}#jump{font:inherit;font-size:13px;max-width:220px;padding:7px;border:1px solid #dce1eb;border-radius:5px;background:#fff;color:#262f3f}@media(max-width:900px){.hint,.material-link{display:none}#jump{max-width:130px}}
-</style>
-</head>
-<body>
-  <div class="toolbar">
-    <span class="title">施辞 · 大数据开发作品集</span><span class="hint">← → 翻页，F 全屏，Esc 退出全屏</span><span class="spacer"></span><select id="jump" aria-label="选择页面"></select><button id="previous" aria-label="上一页">上一页</button><span id="counter" class="counter" aria-live="polite"></span><button id="next" aria-label="下一页">下一页</button><button id="fullscreen">全屏</button>
-  </div>
-  <div class="viewport"><div class="frame-wrap"><iframe id="slide" title="汇报页面预览" src="html/p01.html" tabindex="-1"></iframe></div></div>
-  <script>
-    const frames = ["html/p01.html","html/p02.html","html/p03.html","html/p04.html","html/p05.html","html/p06.html","html/p07.html","html/p08.html","html/p09.html","html/p10.html","html/p11.html","html/p12.html","html/p13.html","html/p14.html","html/p15.html"];
-    const labels = ["封面","个人简介","内容概览","平台全貌","BI 管理与更新","离线加工与补数","平台端创建企业","平台端权限配置","企业端项目与埋点管理","企业端事件与 SDK 上报","实时链路联调","AI 辅助开发","智能问数","项目交付情况","致谢"];
-    const frame = document.querySelector('#slide');
-    const wrap = document.querySelector('.frame-wrap');
-    let current = 0;
-    const jump = document.querySelector('#jump');
-    labels.forEach((label,index)=>{const option=document.createElement('option');option.value=index;option.textContent='P'+String(index+1).padStart(2,'0')+' '+label;jump.appendChild(option);});
-    jump.addEventListener('change',()=>show(Number(jump.value)));
-    function fit() {
-      const box = document.querySelector('.viewport');
-      const padding = document.fullscreenElement ? 0 : 48;
-      const scale = Math.max(.1, Math.min((box.clientWidth-padding)/1280, (box.clientHeight-padding)/720));
-      wrap.style.width = (1280*scale)+'px'; wrap.style.height = (720*scale)+'px';
-      frame.style.transform = 'scale('+scale+')';
-    }
-    function show(index) {
-      current = Math.max(0, Math.min(frames.length-1, index));
-      frame.src = frames[current] + "?v=public-20261116"; frame.title = labels[current];jump.value=current;history.replaceState(null,'','#p'+String(current+1).padStart(2,'0'));
-      document.querySelector('#counter').textContent = (current+1)+' / '+frames.length;
-      document.querySelector('#previous').disabled = current === 0;
-      document.querySelector('#next').disabled = current === frames.length-1;
-    }
-    async function full() {
-      try { if (document.fullscreenElement) await document.exitFullscreen(); else await document.documentElement.requestFullscreen(); } catch(error) { document.querySelector('.hint').textContent = '可使用浏览器的全屏功能'; }
-    }
-    document.querySelector('#previous').addEventListener('click',()=>show(current-1));
-    document.querySelector('#next').addEventListener('click',()=>show(current+1));
-    document.querySelector('#fullscreen').addEventListener('click',full);
-    document.addEventListener('keydown',event=>{
-      if(['ArrowRight','PageDown',' '].includes(event.key)){event.preventDefault();show(current+1)}
-      if(['ArrowLeft','PageUp'].includes(event.key)){event.preventDefault();show(current-1)}
-      if(event.key.toLowerCase()==='f')full();
-      if(event.key==='Home')show(0);if(event.key==='End')show(frames.length-1);
-    });
-    window.addEventListener('resize',fit); document.addEventListener('fullscreenchange',fit); const initial=location.hash.match(/^#p(\d{2})$/);show(initial?Number(initial[1])-1:0);fit();
-  </script>
-</body>
-</html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="施辞的数据开发个人项目介绍：游戏经营数据平台、数据接入、数仓加工与分析服务。"><title>施辞 · 数据开发工程师作品集</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#e4e8f0;color:#262f3f;font-family:"PingFang SC","Microsoft YaHei",sans-serif;overflow:hidden}.toolbar{height:64px;padding:0 28px;display:flex;align-items:center;gap:10px;background:#fff;border-bottom:1px solid #dce1eb}.title{font-size:16px;font-weight:500}.hint{color:#657181;font-size:13px;margin-left:12px}.spacer{flex:1}button,.material-link,#jump{font:inherit;font-size:14px;background:#fff;color:#262f3f;border:1px solid #dce1eb;border-radius:5px;padding:7px 13px;cursor:pointer;text-decoration:none}button:hover,.material-link:hover{background:#eef2f9}button:disabled{opacity:.4;cursor:default}.counter{min-width:82px;text-align:center;font-size:14px}.viewport{position:absolute;top:64px;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;padding:24px}.frame-wrap{position:relative;background:#fff;box-shadow:0 12px 44px #262f3f25}iframe{position:absolute;top:0;left:0;width:1280px;height:720px;border:0;transform-origin:top left;pointer-events:none}:fullscreen .toolbar{display:none}:fullscreen .viewport{top:0;background:#262f3f;padding:0}#jump{font-size:13px;max-width:230px;padding:7px}@media(max-width:900px){.hint{display:none}.toolbar{padding:0 10px;gap:6px}.title{font-size:13px}.counter{min-width:56px}.material-link{display:none}#jump{max-width:126px;font-size:12px}}
+</style></head><body>
+<div class="toolbar"><span class="title">施辞 · 数据开发作品集</span><span class="hint">← → 翻页，F 全屏，Esc 退出全屏</span><span class="spacer"></span><a class="material-link" href="assets/施辞-个人项目介绍-通用版.pdf" download>下载 PDF</a><select id="jump" aria-label="选择页面"><option value="0">P01 个人项目介绍</option><option value="1">P02 个人简介</option><option value="2">P03 项目概览</option><option value="3">P04 游戏经营数据平台整体架构</option><option value="4">P05 多渠道数据同步</option><option value="5">P06 经营 BI 看板</option><option value="6">P07 数据加工与补数</option><option value="7">P08 平台侧创建企业</option><option value="8">P09 平台侧权限配置</option><option value="9">P10 企业端项目与事件管理</option><option value="10">P11 事件配置与 SDK 上报</option><option value="11">P12 实时链路验证</option><option value="12">P13 Report 拖拽分析与业务看板</option><option value="13">P14 AI 辅助开发工具</option><option value="14">P15 智能问数与数据权限</option><option value="15">P16 项目一总结</option></select><button id="previous" aria-label="上一页">上一页</button><span id="counter" class="counter" aria-live="polite"></span><button id="next" aria-label="下一页">下一页</button><button id="fullscreen">全屏</button></div>
+<div class="viewport"><div class="frame-wrap"><iframe id="slide" title="个人项目介绍预览" src="html/p01.html" tabindex="0"></iframe></div></div>
+<script>
+const frames=["html/p01.html","html/p02.html","html/p03.html","html/p04.html","html/p05.html","html/p06.html","html/p07.html","html/p08.html","html/p09.html","html/p10.html","html/p11.html","html/p12.html","html/p13.html","html/p14.html","html/p15.html","html/p16.html"];const labels=["个人项目介绍","个人简介","项目概览","游戏经营数据平台整体架构","多渠道数据同步","经营 BI 看板","数据加工与补数","平台侧创建企业","平台侧权限配置","企业端项目与事件管理","事件配置与 SDK 上报","实时链路验证","Report 拖拽分析与业务看板","AI 辅助开发工具","智能问数与数据权限","项目一总结"];const frame=document.querySelector('#slide');const wrap=document.querySelector('.frame-wrap');let current=0;const jump=document.querySelector('#jump');
+jump.addEventListener('change',()=>show(Number(jump.value)));
+function fit(){const box=document.querySelector('.viewport');const padding=document.fullscreenElement?0:48;const scale=Math.max(.1,Math.min((box.clientWidth-padding)/1280,(box.clientHeight-padding)/720));wrap.style.width=(1280*scale)+'px';wrap.style.height=(720*scale)+'px';frame.style.transform='scale('+scale+')'}
+function show(index){current=Math.max(0,Math.min(frames.length-1,index));frame.src=frames[current]+'?v=generic-20261117';frame.title=labels[current];jump.value=current;history.replaceState(null,'','#p'+String(current+1).padStart(2,'0'));document.querySelector('#counter').textContent=(current+1)+' / '+frames.length;document.querySelector('#previous').disabled=current===0;document.querySelector('#next').disabled=current===frames.length-1}
+async function full(){try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen()}catch(error){document.querySelector('.hint').textContent='可使用浏览器的全屏功能'}}
+document.querySelector('#previous').addEventListener('click',()=>show(current-1));document.querySelector('#next').addEventListener('click',()=>show(current+1));document.querySelector('#fullscreen').addEventListener('click',full);document.addEventListener('keydown',event=>{if(['ArrowRight','PageDown',' '].includes(event.key)){event.preventDefault();show(current+1)}if(['ArrowLeft','PageUp'].includes(event.key)){event.preventDefault();show(current-1)}if(event.key.toLowerCase()==='f')full();if(event.key==='Home')show(0);if(event.key==='End')show(frames.length-1)});window.addEventListener('resize',fit);document.addEventListener('fullscreenchange',fit);const initial=location.hash.match(/^#p(\d{2})$/);show(initial?Number(initial[1])-1:0);fit();
+</script></body></html>
